@@ -4,11 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "d": "nodemon ./src/main.js --mode dev",
+    "dev": "node ./src/main.js --mode dev",
+    "pord": "node ./src/main.js --mode pord"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "koa": "^2.13.4"
+    "@koa/cors": "^4.0.0",
+    "fs-extra": "^10.1.0",
+    "koa": "^2.13.4",
+    "koa-body": "^6.0.1",
+    "koa-router": "^12.0.0"
   }
 }

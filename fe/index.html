@@ -1,0 +1,28 @@
+<body>
+  <input type="file" name="file" id="file" value="" />
+  <button id="submit">上传</button>
+
+  <script>
+    document.getElementById('submit').addEventListener('click', function() {
+      var file = document.getElementById('file').files[0]
+      if(!file) {
+        alert('请上传文件')
+        return
+      }
+      console.log(file)
+
+      var formdata = new FormData()
+      formdata.append("file", file)
+
+      var xhr = new XMLHttpRequest()
+      xhr.open("post", "http://localhost:3000/upload")
+      xhr.onreadystatechange = function() {
+        if(xhr.readyState === 4 && xhr.status === 200) {
+          const result = JSON.parse(xhr.response)
+          console.log(result)
+        }
+      }
+      xhr.send(formdata)
+    })
+  </script>
+</body>
