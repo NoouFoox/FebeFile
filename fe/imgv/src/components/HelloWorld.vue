@@ -4,7 +4,9 @@
       <el-collapse-item title="Push.js" name="1">
         <Push />
       </el-collapse-item>
-      <el-collapse-item title="title2" name="2"> </el-collapse-item>
+      <el-collapse-item title="DarkMode" name="2">
+        <Dark />
+      </el-collapse-item>
       <el-collapse-item title="title3" name="3"> </el-collapse-item>
       <el-collapse-item title="title4" name="4"> </el-collapse-item>
     </el-collapse>
@@ -13,6 +15,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
+import Dark from "./demo/DarkPage.vue";
 import Push from "./demo/Push.vue";
 
 export default defineComponent({
@@ -20,7 +23,7 @@ export default defineComponent({
   props: {
     msg: String,
   },
-  components: { Push },
+  components: { Push, Dark },
   setup() {
     const activeName = ref(0);
     return {
