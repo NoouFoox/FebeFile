@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bodyCard">
     <h1>Dark Mode</h1>
     <el-tag class="ml-2" type="info">暗黑模式(夜间模式)</el-tag>
     <br />
@@ -23,7 +23,7 @@
       type="primary"
       >Vueuse 「useDark」 自动持久化实现
     </el-link>
-    <el-card>
+    <el-card class="card">
       <el-tag>elementplus</el-tag>
       使用暗色模式，只需在 html 上添加一个名为 dark 的类 。
       <el-divider />
@@ -42,4 +42,17 @@ const isDark = useDark();
 const flagDark = () => isDark;
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.bodyCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .card {
+    width: 80%;
+    margin-top: 8px;
+  }
+  .btnbox {
+    margin: 16px;
+  }
+}
+</style>

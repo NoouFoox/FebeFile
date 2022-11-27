@@ -7,8 +7,9 @@
       <el-collapse-item title="DarkMode" name="2">
         <Dark />
       </el-collapse-item>
-      <el-collapse-item title="title3" name="3"> </el-collapse-item>
-      <el-collapse-item title="title4" name="4"> </el-collapse-item>
+      <el-collapse-item title="Vue.draggable" name="3">
+        <VueDraggable />
+      </el-collapse-item>
     </el-collapse>
   </div>
 </template>
@@ -17,13 +18,14 @@
 import { defineComponent, ref } from "vue";
 import Dark from "./demo/DarkPage.vue";
 import Push from "./demo/Push.vue";
+import VueDraggable from "./demo/VueDraggable.vue";
 
 export default defineComponent({
   name: "HelloWorld",
   props: {
     msg: String,
   },
-  components: { Push, Dark },
+  components: { Push, Dark, VueDraggable },
   setup() {
     const activeName = ref(0);
     return {
